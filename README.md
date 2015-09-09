@@ -22,7 +22,7 @@ classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
 ``` script
 ext {
 	PUBLISH_GROUP_ID = '你的groupId'	// 填写groupId， 一般是包名，比如：com.android.support
-	PUBLISH_ARTIFACT_ID = '你的aritfactId'	// aritfactId，比如：appcompat-v7
+	//PUBLISH_ARTIFACT_ID = '你的aritfactId'	// //这里不需要再填写，自动以Model的名字作为aritfactId
 	PUBLISH_VERSION = '版本号'	// 版本号，比如：22.2.1
 	PUBLISH_DES = '库的描述'   // 库的描述尽量不要用中文
 	LIB_NAME = '你的lib名称'	// lib名称，比如：My_Lib
