@@ -47,6 +47,14 @@ gradle bintrayUpload
 ### 完整使用例子
 https://github.com/andforce/Android-DevUtils
 
+### 可能遇到的问题
+#### 1. 如果你的库又引用了别的库怎么办？
+> 不需要特殊处理，直接在 `dependencies` 中引用就可以了
+
+#### 2. 因为现在是以Module的名字作为 `aritfactId` 如果想换怎么办？
+> 只能修改 `Module` 的名称，具体需要修改3处：Module 路径名称，Module 名称， 以及settings.gradle中对应Module名称，都改成一致即可.
+
+
 
 ## 感谢:
 https://github.com/dcendents/android-maven-gradle-plugin
