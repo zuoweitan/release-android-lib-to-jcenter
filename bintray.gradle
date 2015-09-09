@@ -58,4 +58,9 @@ artifacts {
     archives sourcesJar
 }
 
+task jcenter << {
+    println "Release ${version}"
+}
 
+jcenter.dependsOn(install)
+jcenter.dependsOn(bintrayUpload)
