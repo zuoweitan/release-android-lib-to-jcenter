@@ -38,8 +38,7 @@ apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-j
 
 ### 编译发布
 ``` script
-gradle build
-gradle bintrayUpload
+gradle jcenter
 ```
 ### Add to JCenter
 + 执行完上面的步骤，你只是在bintray中创建了一个Package，要发布到JCenter还需要你手动去网站点一下`Add to JCenter`.之后等待审核就好了.
