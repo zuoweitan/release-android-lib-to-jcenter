@@ -18,6 +18,26 @@ bintray.user=你的用户名
 classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.3.1'
 classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
 ```
++ 还是修改 `根目录` build.gradle ,添加:
+``` script
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+```
+并修改
+``` script
+allprojects {
+    repositories {
+    	// 新添加开始
+    	maven {
+            url properties.getProperty("sdk.dir")+"/extras/android/m2repository"
+        }
+        mavenLocal()
+        // 新添加结束
+        jcenter()
+    }
+}
+```
+
 + 修改Module的build.gradle ，在最后添加：
 ``` script
 ext {
