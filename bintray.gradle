@@ -49,6 +49,7 @@ task javadoc(type: Javadoc) {
     classpath += project.files(configurations.compile.files,android.getBootClasspath().join(File.pathSeparator))
 }
 
+
 android.libraryVariants.all { variant ->
     println variant.javaCompile.classpath.files
     if(variant.name == 'release') { //我们只需 release 的 javadoc
@@ -72,6 +73,18 @@ android.libraryVariants.all { variant ->
         artifacts {
             archives tasks.getByName("javadoc${variant.name.capitalize()}Jar")
         }
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream()) // local.properties 有 sdk 的绝对位置
+allprojects {
+    repositories {
+        maven {
+            url properties.getProperty("sdk.dir")+"/extras/android/m2repository"
+        }
+        mavenLocal()
+        jcenter()
     }
 }
 
