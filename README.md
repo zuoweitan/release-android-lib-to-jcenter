@@ -46,15 +46,16 @@ allprojects {
 + 修改Module的build.gradle ，在最后添加：
 ``` script
 ext {
-	PUBLISH_GROUP_ID = '你的groupId'	// 填写groupId， 一般是包名，比如：com.android.support
-	//PUBLISH_ARTIFACT_ID = '你的aritfactId'	// //这里不需要再填写，自动以Model的名字作为aritfactId
-	PUBLISH_VERSION = '版本号'	// 版本号，比如：22.2.1
-	PUBLISH_DES = '库的描述'   // 库的描述尽量不要用中文
-	LIB_NAME = '你的lib名称'	// lib名称，比如：My_Lib
+	name = '你的lib名称'			// lib名称，比如：My_Lib
+	desc = '库的描述'   			// 库的描述尽量不要用中文
 	
-	WEBSITE_URL = '库的网站链接'	// 可以填写github上的库地址.
-	ISSUE_TRACKER_URL = '库的issue链接'	// 可以填写github库的issue地址.
-	VSC_URL = '库的版本控制地址'	// 可以填写github上库的地址.
+	groupId = '你的groupId'			// 填写groupId， 一般是包名，比如：com.android.support
+	//artifactId = '你的aritfactId'	 	// 这里不需要再填写，自动以Model的名字作为aritfactId
+	version = '版本号'			// 版本号，比如：22.2.1
+
+	websiteUrl = '库的网站链接'		// 可以填写github上的库地址.
+	issueTrackerUrl = '库的issue链接'	// 可以填写github库的issue地址.
+	vcsUrl = '库的版本控制地址'		// 可以填写github上库的地址.
 }
 
 // 下面这行请勿修改
