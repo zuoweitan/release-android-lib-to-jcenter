@@ -13,12 +13,14 @@
 bintray.apikey=你的API Key
 bintray.user=你的用户名
 ```
-+ 修改 `根目录`build.gradle ,在 dependencies 中添加两句：
++ 修改 `根目录(Project)`build.gradle中添加两句：
 ``` script
-classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.3.1'
-classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+plugins {
+    id "com.github.dcendents.android-maven" version "1.5"
+    id "com.jfrog.bintray" version "1.7"
+}
 ```
-+ 还是修改 `根目录` build.gradle ,添加:
++ 还是修改 `根目录(Project)` build.gradle ,添加:
 ``` script
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -64,7 +66,7 @@ gradle jcenter
 + 执行完上面的步骤，你只是在bintray中创建了一个Package，要发布到JCenter还需要你手动去网站点一下`Add to JCenter`.之后等待审核就好了.
 
 ### 完整使用例子
-https://github.com/andforce/Android-DevUtils
+https://github.com/andforce/AsyncOkHttp
 
 ### 可能遇到的问题
 #### 1. 如果你的库又引用了别的库怎么办？
