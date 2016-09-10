@@ -81,6 +81,9 @@ https://github.com/andforce/AsyncOkHttp
 
 ## 感谢:
 https://github.com/dcendents/android-maven-gradle-plugin
+
 https://github.com/bintray/gradle-bintray-plugin
+
 http://theartofdev.com/2015/02/19/publish-android-library-to-bintray-jcenter-aar-vs-jar-and-optional-dependency/
+
 http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en
