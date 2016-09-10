@@ -59,11 +59,11 @@ ext {
 apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'
 ```
 
-### 5.编译发布
+### 5.编译并上传到Jcenter
 ``` script
 gradle jcenter
 ```
-### 6.Add to JCenter
+### 6.正式发布
 执行完上面的步骤，你只是在bintray中创建了一个Package，要发布到JCenter还需要你手动去网站点一下`Add to JCenter`.之后等待审核就好了.
 
 -------------------------
