@@ -1,4 +1,7 @@
 # 发布lib到jcenter
+![](https://img.shields.io/badge/Gradle-v2.14.1-red.svg)
+![](https://img.shields.io/badge/Studio-v2.1.3-green.svg)
+![](https://img.shields.io/badge/Java-7-blue.svg)
 
 ## 准备
 + 注册账号：https://bintray.com (可以用github账号直接授权).
