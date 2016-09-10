@@ -13,8 +13,8 @@
 ### 2.修改在 `local.properties` 
 在最后添加如下两个属性：
 ``` script
-bintray.apikey=你的API Key
-bintray.user=你的用户名
+bintray.apikey='Your API Key'
+bintray.user='Your User Name'
 ```
 ### 3. 修改 `根目录(Project)`build.gradle
 + 添加工具库插件
