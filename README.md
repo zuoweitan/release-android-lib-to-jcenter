@@ -9,30 +9,29 @@
 + 在 `Edit Your Profile` -> `API Key` 中获取Key.
 
 ## 如何使用
-+ 创建 `Android Library Project`
-+ 在 `local.properties` 最后添加：
+### 1.创建 `Android Library Project`
+### 2.修改在 `local.properties` 
+在最后添加如下两个属性：
 ``` script
 bintray.apikey=你的API Key
 bintray.user=你的用户名
 ```
-+ 修改 `根目录(Project)`build.gradle中添加两句：
+### 3. 修改 `根目录(Project)`build.gradle
++ 添加工具库插件
 ``` script
 plugins {
     id "com.github.dcendents.android-maven" version "1.5"
     id "com.jfrog.bintray" version "1.7"
 }
 ```
-+ 还是修改 `根目录(Project)` build.gradle ,添加:
-``` script
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-```
-并修改
++ 添加本地maven仓库路径
 ``` script
 allprojects {
     repositories {
     	// 新添加开始
     	maven {
+	    	Properties properties = new Properties()
+			properties.load(project.rootProject.file('local.properties').newDataInputStream())
             url properties.getProperty("sdk.dir")+"/extras/android/m2repository"
         }
         mavenLocal()
@@ -42,32 +41,32 @@ allprojects {
 }
 ```
 
-+ 修改Module的build.gradle ，在最后添加：
+### 4.修改`Module的`build.gradle ，在最后添加：
 ``` script
 ext {
-	name = '你的lib名称'			// lib名称，比如：My_Lib
-	desc = '库的描述'   			// 库的描述尽量不要用中文
+	name = '你的lib名称'			        // lib名称，比如：My_Lib
+	desc = '库的描述'   			        // 库的描述尽量不要用中文
 	
-	groupId = '你的groupId'			// 填写groupId， 一般是包名，比如：com.android.support
-	//artifactId = '你的aritfactId'	 	// 这里不需要再填写，自动以Model的名字作为aritfactId
-	version = '版本号'			// 版本号，比如：22.2.1
+	groupId = '你的groupId'			     // 填写groupId， 一般是包名，比如：com.android.support
+	//artifactId = '你的aritfactId'	 	 // 这里不需要再填写，自动以Model的名字作为aritfactId
+	version = '版本号'			            // 版本号，比如：22.2.1
 
-	websiteUrl = '库的网站链接'		// 可以填写github上的库地址.
-	issueTrackerUrl = '库的issue链接'	// 可以填写github库的issue地址.
-	vcsUrl = '库的版本控制地址'		// 可以填写github上库的地址.
+	websiteUrl = '库的网站链接'		       // 可以填写github上的库地址.
+	issueTrackerUrl = '库的issue链接'	    // 可以填写github库的issue地址.
+	vcsUrl = '库的版本控制地址'		         // 可以填写github上库的地址.
 }
-
 // 下面这行请勿修改
 apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'
 ```
 
-### 编译发布
+### 5.编译发布
 ``` script
 gradle jcenter
 ```
-### Add to JCenter
-+ 执行完上面的步骤，你只是在bintray中创建了一个Package，要发布到JCenter还需要你手动去网站点一下`Add to JCenter`.之后等待审核就好了.
+### 6.Add to JCenter
+执行完上面的步骤，你只是在bintray中创建了一个Package，要发布到JCenter还需要你手动去网站点一下`Add to JCenter`.之后等待审核就好了.
 
+-------------------------
 ### 完整使用例子
 https://github.com/andforce/AsyncOkHttp
 
