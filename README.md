@@ -7,7 +7,6 @@
 + 注册账号：https://bintray.com (可以用github账号直接授权).
 + 注册完毕之后，记住用户名.
 + 在 `Edit Your Profile` -> `API Key` 中获取Key.
-+ 确保自己本机 `Gradle` 的版本 `>=2.4`,否则会出错.
 
 ## 如何使用
 + 创建 `Android Library Project`
