@@ -6,12 +6,12 @@ configurations {
     compile.extendsFrom optional
 }
 
-def siteUrl = project.WEBSITE_URL
-def gitUrl = project.VSC_URL
-def libName = project.LIB_NAME
+def siteUrl = project.websiteUrl
+def gitUrl = project.vcsUrl
+def libName = project.name
 
-group = project.PUBLISH_GROUP_ID
-version = project.PUBLISH_VERSION
+group = project.groupId
+version = project.version
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -24,10 +24,10 @@ bintray {
     pkg {
         repo = "maven"  //发布到Bintray的maven库
         name = libName  //发布到Bintray上的项目名字
-        desc = project.PUBLISH_DES
+        desc = project.desc
         publicDownloadNumbers = true
         websiteUrl = siteUrl
-        issueTrackerUrl = project.ISSUE_TRACKER_URL
+        issueTrackerUrl = project.issueTrackerUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true
