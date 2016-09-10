@@ -1,4 +1,4 @@
-# 发布lib到jcenter
+# 发布Lib到Jcenter
 ![](https://img.shields.io/badge/Gradle-v2.14.1-red.svg)
 ![](https://img.shields.io/badge/Studio-v2.1.3-green.svg)
 ![](https://img.shields.io/badge/Java-7-blue.svg)
