@@ -11,7 +11,7 @@ def gitUrl = project.vcsUrl
 def libName = project.name
 
 group = project.groupId
-version = project.version
+version = project.versionName
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
