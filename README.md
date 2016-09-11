@@ -49,7 +49,7 @@ ext {
 	
 	groupId = '你的groupId'			     // 填写groupId， 一般是包名，比如：com.android.support
 	//artifactId = '你的aritfactId'	 	 // 这里不需要再填写，自动以Model的名字作为aritfactId
-	version = '版本号'			            // 版本号，比如：22.2.1
+	versionName = '版本号'			            // 版本号，比如：22.2.1
 
 	websiteUrl = '库的网站链接'		       // 可以填写github上的库地址.
 	issueTrackerUrl = '库的issue链接'	    // 可以填写github库的issue地址.
