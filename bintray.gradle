@@ -17,14 +17,14 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 bintray {
-    userOrg = properties.getProperty("bintray.userOrg")
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
 
     pkg {
-        repo = "maven"  //发布到Bintray的maven库
-        name = libName  //发布到Bintray上的项目名字
+        userOrg = properties.getProperty("bintray.userOrg")
+        repo = "maven"
+        name = libName
         desc = project.desc
         publicDownloadNumbers = true
         websiteUrl = siteUrl
